@@ -1,0 +1,83 @@
+.main {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 375px;
+  height: auto;
+  background-color: white !important;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  z-index: 10000;
+  overflow: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.main h3 {
+  font-size: 2rem !important;
+  color: black;
+  margin-bottom: 0 !important;
+}
+
+.main p {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.main .input-container,
+.main .textarea-container,
+.main .dropdown-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.main .dropdown,
+.main .text-field {
+  width: 100%;
+  padding: 8px 4px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: white;
+  color: black !important;
+}
+
+.main .label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: black !important;
+}
+
+.main .textarea-container textarea {
+  width: 100%;
+  height: 400px;
+  font-size: 0.75rem;
+  color: black !important;
+  background-color: white !important;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.main .input-container input {
+  width: 100%;
+  padding: 8px 4px;
+}
+
+.main .btn-primary {
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: black !important;
+  color: white !important;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+}
