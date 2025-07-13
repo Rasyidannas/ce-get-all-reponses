@@ -23,16 +23,21 @@ export default defineManifest({
   },
   content_scripts: [
     {
-      matches: ['https://*/*'],
+      matches: ['http://*/*', 'https://*/*'],
       js: ['src/contentScript/index.tsx'],
     },
   ],
   web_accessible_resources: [
     {
-      resources: ["*.png", "*.js", "injector.js"],
+      resources: ['*.png', '*.js', 'injector.js'],
       matches: ['http://*/*', 'https://*/*', '<all_urls>'],
     },
   ],
   permissions: ['sidePanel', 'storage', 'webRequest'],
-  host_permissions: ['http://*/*', 'https://*/*', '<all_urls>'],
+  host_permissions: [
+    'http://*/*',
+    'https://*/*',
+    '<all_urls>',
+    // 'http://192.168.8.140:5678/*', // Add specific permission for your local server
+  ],
 })
