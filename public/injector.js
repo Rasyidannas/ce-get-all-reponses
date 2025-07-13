@@ -10,7 +10,7 @@
       .text()
       .then((body) => {
         // console.log('[Sniff‑fetch]', args[0], body) // pipe to devtools
-        // localStorage.setItem(`getRes-${args[0]}`, body)
+        // localStorage.setItem(resp.url, body)
         window.dispatchEvent(
           new CustomEvent('net-sniff', {
             detail: { type: 'fetch', url: resp.url, body },
@@ -33,7 +33,7 @@
     })
     xhr.addEventListener('load', function () {
       // console.log('[Sniff‑xhr]', url, this.responseText)
-      // localStorage.setItem(`getRes-${url}`, this.responseText)
+      // localStorage.setItem(url, this.responseText)
       window.dispatchEvent(
         new CustomEvent('net-sniff', {
           detail: { type: 'xhr', url, body: this.responseText },

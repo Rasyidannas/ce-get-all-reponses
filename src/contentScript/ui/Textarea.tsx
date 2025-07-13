@@ -1,7 +1,7 @@
-const findResponseStorage = (url: string) => {
+const findResponseStorage = (url: string): any => {
   const response = localStorage.getItem(url)
   if (!response) return null
-  return JSON.parse(response)
+  return response
 }
 
 export default ({ selectedUrl, onJson }: { selectedUrl: string; onJson: (any: {}) => void }) => {

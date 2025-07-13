@@ -21,7 +21,7 @@ export default () => {
     const handlerNetSniff = (event: CustomEvent) => {
       const { type, url, body } = event.detail
 
-      localStorage.setItem(url, JSON.stringify(body))
+      localStorage.setItem(url, body)
 
       setAllResponses((prev) => [
         ...prev,
