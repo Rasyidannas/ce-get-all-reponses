@@ -34,5 +34,5 @@ export default defineManifest({
     },
   ],
   permissions: ['sidePanel', 'storage', 'webRequest'],
-  host_permissions: ['http://*/*', 'https://*/*'],
+  host_permissions: ['http://*/*', 'https://*/*', '<all_urls>'],
 })

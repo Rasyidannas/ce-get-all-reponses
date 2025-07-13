@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Dropdown from '../ui/Dropdown'
 import Textarea from '../ui/Textarea'
+import FormPost from './FormPost'
 import './Main.css'
 
 export default () => {
@@ -14,6 +15,7 @@ export default () => {
   >([])
 
   const [selectedUrl, setSelectedUrl] = useState<string | null>(null)
+  const [resJson, setResJson] = useState<any | null>(null)
 
   useEffect(() => {
     const handlerNetSniff = (event: CustomEvent) => {
@@ -53,16 +55,14 @@ export default () => {
         }}
       />
 
-      <Textarea selectedUrl={selectedUrl ?? ''} />
+      <Textarea
+        selectedUrl={selectedUrl ?? ''}
+        onJson={(json) => {
+          setResJson(json)
+        }}
+      />
 
-      <form>
-        <div className="input-container">
-          <label className="label">Send to URL</label>
-          <input type="text" placeholder="https://example.com" className="text-field"></input>
-        </div>
-
-        <button className="btn-primary">Submit</button>
-      </form>
+      <FormPost resJson={resJson} />
     </div>
   )
 }

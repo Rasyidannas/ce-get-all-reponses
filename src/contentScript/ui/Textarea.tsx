@@ -4,7 +4,11 @@ const findResponseStorage = (url: string) => {
   return JSON.parse(response)
 }
 
-export default ({ selectedUrl }: { selectedUrl: string }) => {
+export default ({ selectedUrl, onJson }: { selectedUrl: string; onJson: (any: {}) => void }) => {
+  if (selectedUrl) {
+    onJson(findResponseStorage(selectedUrl))
+  }
+
   return (
     <div className="textarea-container">
       <label className="label">Response</label>
