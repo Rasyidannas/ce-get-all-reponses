@@ -9,6 +9,7 @@ chrome.runtime.onMessage.addListener((request) => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'POST_REQUEST') {
     console.log('Post Request is running')
+    console.log('request is', request)
     // Handle the async operation properly
     fetch(request.url, {
       method: 'POST',

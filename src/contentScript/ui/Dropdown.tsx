@@ -4,7 +4,7 @@ export default ({ items, onSelect }: { items: string[]; onSelect: (url: string) 
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const url = e.target.value
-    if (url === 'Choose a url') return
+    if (url === 'Choose a url') return onSelect('')
     onSelect(url)
   }
 

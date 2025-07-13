@@ -1,6 +1,6 @@
 // inpage-hook.js   (in MAIN world, run_at=document_start)
 ;(() => {
-  // console.log('this is function in injector.js')
+  console.log('this is function in injector.js')
   /* --- fetch --------------------------------------------------- */
   const realFetch = window.fetch
   window.fetch = async (...args) => {
@@ -9,7 +9,7 @@
       .clone()
       .text()
       .then((body) => {
-        // console.log('[Sniff‑fetch]', args[0], body) // pipe to devtools
+        // console.log('[Sniff‑fetch]', args[0], body) // pipe to devtool
         // localStorage.setItem(resp.url, body)
         window.dispatchEvent(
           new CustomEvent('net-sniff', {
