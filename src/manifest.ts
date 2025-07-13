@@ -29,8 +29,8 @@ export default defineManifest({
   ],
   web_accessible_resources: [
     {
-      resources: ['img/logo-16.png', 'img/logo-32.png', 'img/logo-48.png', 'img/logo-128.png'],
-      matches: [],
+      resources: ["*.png", "*.js", "injector.js"],
+      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
     },
   ],
   permissions: ['sidePanel', 'storage', 'webRequest'],
